@@ -48,6 +48,7 @@ class StudentSerializer(serializers.ModelSerializer):
         model = Student
         fields = (
             'class_year',
+            'favorite_num',
             'img_url',
             'fbook_uid',
             'major',

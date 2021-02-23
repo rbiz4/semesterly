@@ -35,7 +35,6 @@ class UserSettingsModal extends React.Component {
       showDelete: false,
     };
     this.changeForm = this.changeForm.bind(this);
-    this.changeMajor = this.changeMajor.bind(this);
     this.changeClassYear = this.changeClassYear.bind(this);
     this.shouldShow = this.shouldShow.bind(this);
     this.hide = this.hide.bind(this);
@@ -314,6 +313,9 @@ class UserSettingsModal extends React.Component {
                 searchable
                 onChange={this.changeClassYear}
               />
+            </div>
+            <div className="preference cf">
+              <h3>This is your favorite number: { this.props.userInfo.favorite_num } </h3>
             </div>
             { preferences }
             {/* { !this.state.isSigningUp ? notifications : null } */}

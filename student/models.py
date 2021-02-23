@@ -39,6 +39,7 @@ class Student(models.Model):
     JUNIOR = 'JR'
     SENIOR = 'SR'
     class_year = models.IntegerField(blank=True, null=True)
+    favorite_num = models.IntegerField(blank=False, null=False, default=7)
     user = models.OneToOneField(User)
     img_url = models.CharField(max_length=300, default=-1)
     friends = models.ManyToManyField("self", blank=True)
