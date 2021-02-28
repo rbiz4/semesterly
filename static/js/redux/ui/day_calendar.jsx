@@ -211,9 +211,17 @@ class DayCalendar extends React.Component {
         onClick={() => this.props.triggerSaveCalendarModal()}
         className="save-timetable"
       >
-        <img alt="add" src="static/img/addtocalendar.png" />
+        <img alt="add" src="../../../../static/img/addtocalendar.png" />
       </button>
         );
+    const mockButton = (
+        <button
+            onClick={() => this.props.triggerSaveCalendarModal()}
+            className="save-timetable"
+        >
+          <img alt="add" src="../../../../static/img/star.png" />
+        </button>
+          );
     return (
       <div className="calendar fc fc-ltr fc-unthemed day-calendar">
         <div className="fc-toolbar no-print">
@@ -301,6 +309,7 @@ DayCalendar.defaultProps = {
 DayCalendar.propTypes = {
   togglePreferenceModal: PropTypes.func.isRequired,
   triggerSaveCalendarModal: PropTypes.func.isRequired,
+  triggerMockModal: PropTypes.func.isRequired,
   isFetchingShareLink: PropTypes.bool.isRequired,
   endHour: PropTypes.number.isRequired,
   handleCreateNewTimetable: PropTypes.func.isRequired,

@@ -21,7 +21,7 @@ import {
     getReactToCourseEndpoint,
 } from '../constants/endpoints';
 import { courseSchema } from '../schema';
-import { getSchool, getSemester } from '../actions/school_actions';
+import { getSchool, getSemester } from './school_actions';
 import * as ActionTypes from '../constants/actionTypes';
 
 export const setCourseInfo = json => ({
@@ -93,6 +93,10 @@ export const togglePreferenceModal = () => ({ type: ActionTypes.TOGGLE_PREFERENC
 export const triggerSaveCalendarModal = () => ({ type: ActionTypes.TRIGGER_SAVE_CALENDAR_MODAL });
 
 export const toggleSaveCalendarModal = () => ({ type: ActionTypes.TOGGLE_SAVE_CALENDAR_MODAL });
+
+export const triggerMockModal = () => ({ type: ActionTypes.TRIGGER_MOCK_MODAL });
+
+export const toggleMockModal = () => ({ type: ActionTypes.TOGGLE_MOCK_MODAL });
 
 export const openSignUpModal = () => ({ type: ActionTypes.TOGGLE_SIGNUP_MODAL });
 

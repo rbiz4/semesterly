@@ -166,6 +166,27 @@ class Calendar extends React.Component {
         Click, drag, and release to create your custom event
       </h4>)
       : null;
+    const mockButton = (
+        <div className="cal-btn-wrapper">
+          <button
+              onClick={() => this.props.triggerMockModal()}
+              className="save-timetable add-button"
+              data-tip
+              data-for="mock-btn-tooltip"
+          >
+            <img src="/static/img/star.png" alt="STAR" style={{ marginTop: '2px' }} />
+          </button>
+          <ReactTooltip
+              id="mock-btn-tooltip"
+              class="tooltip"
+              type="dark"
+              place="bottom"
+              effect="solid"
+          >
+            <span>Mock Modal</span>
+          </ReactTooltip>
+        </div>
+    );
     const addSISButton = this.props.registrarSupported ? (
       <div className="cal-btn-wrapper">
         <button
@@ -342,6 +363,7 @@ class Calendar extends React.Component {
             { pilot }
           </div>
           <div className="fc-right">
+            { mockButton }
             { addSISButton }
             { addCustomEventButton }
             { shareButton }
@@ -453,6 +475,7 @@ Calendar.defaultProps = {
 Calendar.propTypes = {
   togglePreferenceModal: PropTypes.func.isRequired,
   triggerSaveCalendarModal: PropTypes.func.isRequired,
+  triggerMockModal: PropTypes.func.isRequired,
   isFetchingShareLink: PropTypes.bool.isRequired,
   endHour: PropTypes.number.isRequired,
   handleCreateNewTimetable: PropTypes.func.isRequired,
