@@ -19,6 +19,7 @@ import { toggleMockModal } from '../../../actions/modal_actions';
 const mapStateToProps = state => ({
   isVisible: state.mockModal.isVisible,
   userInfo: state.userInfo.data,
+  mockInfo: state.mockInfo.data,
 });
 
 const MockModalContainer = connect(

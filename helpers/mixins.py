@@ -26,6 +26,7 @@ from agreement.serializers import AgreementSerializer
 from student.utils import get_student
 from student.utils import get_mock
 from student.serializers import get_student_dict
+from student.serializers import get_mock_dict
 from student.serializers import MockModelSerializer
 from timetable.models import Semester
 from timetable.school_mappers import SCHOOLS_MAP
@@ -106,7 +107,7 @@ class FeatureFlowView(ValidateSubdomainMixin, APIView):
         init_data = {
             'school': self.school,
             'currentUser': get_student_dict(self.school, self.student, sem),
-            'mock': MockModelSerializer(MockModel.objects).data,
+            'mock': get_mock_dict(self.mock),
             'currentSemester': curr_sem_index,
             'allSemesters': all_semesters,
             # 'oldSemesters': get_old_semesters(self.school),

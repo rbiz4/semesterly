@@ -53,9 +53,9 @@ class MockModal extends React.Component {
         <h3>First Name: { this.props.userInfo.userFirstName } </h3>
         <h3>Last Name: { this.props.userInfo.userLastName } </h3>
         <h3>Graduating Class: { this.props.userInfo.class_year } </h3>
-          <h3>First Name: { this.props.mockInfo.mock_one } </h3>
-          <h3>Last Name: { this.props.mockInfo.mock_two } </h3>
-          <h3>Graduating Class: { this.props.mockInfo.mock_three } </h3>
+        <h3>Mock One: { this.props.mockInfo.mock_one } </h3>
+        <h3>Mock Two: { this.props.mockInfo.mock_two } </h3>
+        <h3>Mock Three: { this.props.mockInfo.mock_three ? "True" : "False" } </h3>
       </div>);
     const modalStyle = {
       width: '100%',

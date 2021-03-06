@@ -13,15 +13,14 @@ GNU General Public License for more details.
 */
 
 import * as ActionTypes from '../constants/actionTypes';
-import { isIncomplete } from '../util';
 
 export const initialState = {
 };
 
 const mockInfo = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.MOCK:
-      return state;
+    case ActionTypes.INIT_STATE:
+      return Object.assign({}, state, { data: action.data.mock });
     default:
       return state;
   }

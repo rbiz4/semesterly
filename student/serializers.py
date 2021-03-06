@@ -34,6 +34,10 @@ def get_student_dict(school, student, semester):
     return user_dict
 
 
+def get_mock_dict(mock):
+    return dict(**MockModelSerializer(mock).data)
+
+
 class StudentSerializer(serializers.ModelSerializer):
     userFirstName = serializers.CharField(source='user.first_name')
     userLastName = serializers.CharField(source='user.last_name')

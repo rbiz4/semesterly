@@ -55,7 +55,7 @@ def get_mock(request):
     Returns:
         (:obj:`Student`): the student belonging to the authenticated user
     """
-    return MockModel.objects.get()
+    return MockModel.objects.get(id=1)
 
 
 def get_classmates_from_course_id(
