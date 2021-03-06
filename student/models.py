@@ -177,3 +177,13 @@ class PilotOffering(models.Model):
 
     def __unicode__(self):
         return "Course: %s, Day: %s, Time: %s - %s" % (self.course_name, self.day, self.time_start, self.time_end)
+
+
+class MockModel(models.Model):
+    """ Mock database object.
+
+        Mock Model to be displayed on Mock Modal
+    """
+    mock_one = models.IntegerField(blank=True, null=True, default=1)
+    mock_two = models.CharField(max_length=300, default='m')
+    mock_three = models.NullBooleanField(null=True, default=True)

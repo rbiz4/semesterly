@@ -40,6 +40,7 @@ import integrationModal from './integration_modal_reducer';
 import integrations from './integrations_reducer';
 import saveCalendarModal from './save_calendar_modal_reducer';
 import mockModal from './mock_modal_reducer';
+import mockInfo from './mock_info_reducer';
 import termsOfServiceModal from './terms_of_service_modal_reducer';
 import termsOfServiceBanner from './terms_of_service_banner_reducer';
 import userAcquisitionModal from './user_acquisition_modal_reducer';
@@ -69,6 +70,7 @@ const rootReducer = combineReducers({
   registrar,
   saveCalendarModal,
   mockModal,
+  mockInfo,
   savingTimetable,
   school,
   searchResults,

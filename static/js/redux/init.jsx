@@ -178,6 +178,7 @@ const setup = () => (dispatch) => {
   if (initData.featureFlow.name === null) {
     dispatch(handleAgreement(
       initData.currentUser,
+      initData.mock,
       Date.parse(initData.latestAgreement.timeUpdated)));
   }
 

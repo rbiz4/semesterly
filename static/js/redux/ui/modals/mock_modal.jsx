@@ -48,6 +48,15 @@ class MockModal extends React.Component {
           </div>
         </div>
       </div>);
+    const modalBody =
+      (<div className="modal-body">
+        <h3>First Name: { this.props.userInfo.userFirstName } </h3>
+        <h3>Last Name: { this.props.userInfo.userLastName } </h3>
+        <h3>Graduating Class: { this.props.userInfo.class_year } </h3>
+          <h3>First Name: { this.props.mockInfo.mock_one } </h3>
+          <h3>Last Name: { this.props.mockInfo.mock_two } </h3>
+          <h3>Graduating Class: { this.props.mockInfo.mock_three } </h3>
+      </div>);
     const modalStyle = {
       width: '100%',
     };
@@ -62,6 +71,7 @@ class MockModal extends React.Component {
         }}
       >
         {modalHeader}
+        {modalBody}
       </Modal>
     );
   }
@@ -70,6 +80,7 @@ class MockModal extends React.Component {
 MockModal.propTypes = {
   toggleMockModal: PropTypes.func.isRequired,
   userInfo: SemesterlyPropTypes.userInfo.isRequired,
+  mockInfo: SemesterlyPropTypes.mockInfo.isRequired,
   isVisible: PropTypes.bool.isRequired,
 };
 

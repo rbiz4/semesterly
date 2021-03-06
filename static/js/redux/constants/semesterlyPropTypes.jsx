@@ -175,6 +175,13 @@ export const userInfo = PropTypes.shape({
   timeAcceptedTos: PropTypes.string,
 });
 
+// should match StudentSerializer + isLoggedIn
+export const mockInfo = PropTypes.shape({
+  mock_one: PropTypes.number,
+  mock_two: PropTypes.string,
+  mock_three: PropTypes.bool,
+});
+
 export const schoolSpecificInfo = PropTypes.shape({
   areasName: PropTypes.string.isRequired,
   campuses: PropTypes.shape({}),
