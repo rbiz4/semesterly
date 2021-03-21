@@ -1,0 +1,9 @@
+
+> node-sass@4.14.1 install /home/rishi/Desktop/Coursework/2-SS2/semesterly/node_modules/node-sass
+> node scripts/install.js
+
+
+> node-sass@4.14.1 postinstall /home/rishi/Desktop/Coursework/2-SS2/semesterly/node_modules/node-sass
+> node scripts/build.js
+
+Building: /usr/bin/node /home/rishi/Desktop/Coursework/2-SS2/semesterly/node_modules/node-gyp/bin/node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=
