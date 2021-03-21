@@ -158,6 +158,14 @@ class DayCalendar extends React.Component {
     const saveIcon = this.props.saving ? <i className="fa fa-spin fa-circle-o-notch" /> :
     <i className="fa fa-floppy-o" />;
 
+    const openChatModalButton = (
+        <button
+            onClick={() => this.props.toggleChatModal()}
+            className="save-timetable"
+        >
+          <img src="/static/img/star.png" alt="Open mock modal" />
+        </button>
+    );
     const shareButton = (
       <button
         onClick={this.fetchShareTimetableLink}
@@ -221,6 +229,7 @@ class DayCalendar extends React.Component {
             <PaginationContainer />
           </div>
           <div className="fc-right">
+            { openChatModalButton }
             { shareButton }
             { shareLink }
             { addButton }
@@ -301,6 +310,7 @@ DayCalendar.defaultProps = {
 DayCalendar.propTypes = {
   togglePreferenceModal: PropTypes.func.isRequired,
   triggerSaveCalendarModal: PropTypes.func.isRequired,
+  toggleChatModal: PropTypes.func.isRequired,
   isFetchingShareLink: PropTypes.bool.isRequired,
   endHour: PropTypes.number.isRequired,
   handleCreateNewTimetable: PropTypes.func.isRequired,

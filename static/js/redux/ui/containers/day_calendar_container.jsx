@@ -20,7 +20,7 @@ import {
     createICalFromTimetable,
     fetchShareTimetableLink,
 } from '../../actions/calendar_actions';
-import { togglePreferenceModal, triggerSaveCalendarModal } from '../../actions/modal_actions';
+import { togglePreferenceModal, triggerSaveCalendarModal, toggleChatModal } from '../../actions/modal_actions';
 import { getMaxEndHour } from '../../reducers/root_reducer';
 
 const mapStateToProps = (state) => {
@@ -47,6 +47,7 @@ const DayCalendarContainer = connect(
     triggerSaveCalendarModal,
     createICalFromTimetable,
     handleCreateNewTimetable,
+    toggleChatModal,
   },
 )(DayCalendar);
 

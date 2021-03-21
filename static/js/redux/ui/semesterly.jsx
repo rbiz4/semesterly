@@ -39,6 +39,9 @@ import TermsOfServiceModalContainer from './containers/terms_of_service_modal_co
 import TermsOfServiceBannerContainer from './containers/terms_of_service_banner_container';
 import TextbookModalContainer from './containers/modals/textbook_modal_container';
 
+//CHAT MODAL
+import ChatModalContainer from './containers/modals/chat_modal_container';
+
 
 class Semesterly extends React.Component {
   constructor(props) {
@@ -161,6 +164,7 @@ class Semesterly extends React.Component {
         <TermsOfServiceModalContainer />
         <TermsOfServiceBannerContainer />
         <TextbookModalContainer />
+        <ChatModalContainer />
         <AlertBox ref={(a) => { this.msg = a; }} {...this.alertOptions} />
         <div className="all-cols">
           <div className="main-bar">

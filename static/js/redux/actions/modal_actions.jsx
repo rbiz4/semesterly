@@ -145,3 +145,6 @@ export const setUserSettingsModalVisible = () => ({
 export const setUserSettingsModalHidden = () => ({
   type: ActionTypes.SET_SETTINGS_MODAL_HIDDEN,
 });
+
+//CHAT MODAL
+export const toggleChatModal = () => ({ type: ActionTypes.TOGGLE_CHAT_MODAL });

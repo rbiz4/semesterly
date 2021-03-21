@@ -18,6 +18,7 @@ from django.views.generic import TemplateView
 from rest_framework_swagger.views import get_swagger_view
 from rest_framework.schemas import get_schema_view
 
+
 import helpers.mixins
 import semesterly.views
 import timetable.utils
@@ -35,6 +36,7 @@ urlpatterns = [
     url('', include('authpipe.urls')),
     url('', include('timetable.urls')),
     url('', include('courses.urls')),
+    url('', include('chat.urls')),
     url('', include('integrations.urls')),
     url('', include('exams.urls')),
     url('', include('searches.urls')),

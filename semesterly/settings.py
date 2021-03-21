@@ -173,6 +173,8 @@ INSTALLED_APPS = (
     'analytics',
     'scripts',
     'student',
+    'channels',
+    'chat',
     'cachalot',
     'rest_framework',
     'rest_framework_swagger',

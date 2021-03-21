@@ -166,6 +166,27 @@ class Calendar extends React.Component {
         Click, drag, and release to create your custom event
       </h4>)
       : null;
+    const openChatModalButton = (
+        <div className="cal-btn-wrapper">
+          <button
+              onClick={() => this.props.toggleChatModal()}
+              className="save-timetable"
+              data-tip
+              data-for="openChatModal-btn-tooltip"
+          >
+            <img src="/static/img/star.png" alt="Open mock modal" />
+          </button>
+          <ReactTooltip
+              id="openChatModal-btn-tooltip"
+              class="tooltip"
+              type="dark"
+              place="bottom"
+              effect="solid"
+          >
+            <span>Open Chat Modal</span>
+          </ReactTooltip>
+        </div>
+    );
     const addSISButton = this.props.registrarSupported ? (
       <div className="cal-btn-wrapper">
         <button
@@ -342,6 +363,7 @@ class Calendar extends React.Component {
             { pilot }
           </div>
           <div className="fc-right">
+            { openChatModalButton }
             { addSISButton }
             { addCustomEventButton }
             { shareButton }
@@ -453,6 +475,7 @@ Calendar.defaultProps = {
 Calendar.propTypes = {
   togglePreferenceModal: PropTypes.func.isRequired,
   triggerSaveCalendarModal: PropTypes.func.isRequired,
+  toggleChatModal: PropTypes.func.isRequired,
   isFetchingShareLink: PropTypes.bool.isRequired,
   endHour: PropTypes.number.isRequired,
   handleCreateNewTimetable: PropTypes.func.isRequired,

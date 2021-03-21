@@ -47,6 +47,8 @@ import finalExamsModal from './final_exams_modal_reducer';
 import registrar from './registrar_reducer';
 import entities, * as fromEntities from './entities_reducer';
 
+import chatModal from './chat_modal_reducer';
+
 const rootReducer = combineReducers({
   alerts,
   calendar,
@@ -79,6 +81,7 @@ const rootReducer = combineReducers({
   ui,
   userAcquisitionModal,
   userInfo,
+  chatModal,
 });
 
 // timetable/entity selectors
