@@ -24,7 +24,6 @@ class CommentSerializer(serializers.ModelSerializer):
             'author_name',
             'content',
             'timestamp',
-            #'transcript',
         )
 
 
