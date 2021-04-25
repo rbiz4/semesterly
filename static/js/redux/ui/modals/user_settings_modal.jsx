@@ -272,6 +272,45 @@ class UserSettingsModal extends React.Component {
       document.body.appendChild(link);
       link.click();
     }
+
+    //console.log(this.props.userInfo.owned_transcripts)
+
+    let my_comments = []
+    for (let i = 0; i < this.props.userInfo.owned_transcripts.length; i++) {
+      for (let j = 0; j < this.props.userInfo.owned_transcripts[i]['comments'].length; j++) {
+        if (this.props.userInfo.owned_transcripts[i]['comments'][j]['author_name'] == this.props.userInfo.userFullName) {
+          my_comments.push(<p>{this.props.userInfo.owned_transcripts[i]['comments'][j]['content']}</p>)
+        }
+      }
+    }
+
+    let advisor_comments = []
+    for (let i = 0; i < this.props.userInfo.owned_transcripts.length; i++) {
+      for (let j = 0; j < this.props.userInfo.owned_transcripts[i]['comments'].length; j++) {
+        if (this.props.userInfo.owned_transcripts[i]['comments'][j]['author_name'] != this.props.userInfo.userFullName) {
+          advisor_comments.push(<p>{this.props.userInfo.owned_transcripts[i]['comments'][j]['content']}</p>)
+        }
+      }
+    }
+
+    const transcripts = (
+        <div>
+          <p>I own {this.props.userInfo.owned_transcripts.length} transcripts.</p>
+          <p>I said {my_comments}</p>
+          <p>Others said {advisor_comments}</p>
+        </div>
+    );
+
+    const with_map = (
+        <div>
+          {this.props.userInfo.owned_transcripts.map(transcript => (
+              transcript['comments'].map(comment => (
+                  <p>{comment['content']}</p>
+              ))
+          ))}
+        </div>
+    );
+
     return (
       <Modal
         ref={(c) => { this.modal = c; }}
@@ -315,6 +354,24 @@ class UserSettingsModal extends React.Component {
                 onChange={this.changeClassYear}
               />
             </div>
+            <div className="preference cf">
+              <h3>What&#39;s your graduating class year?</h3>
+              <Select
+                  name="form-field-name"
+                  value={this.props.userInfo.class_year}
+                  options={[
+                    { value: 2021, label: 2021 },
+                    { value: 2022, label: 2022 },
+                    { value: 2023, label: 2023 },
+                    { value: 2024, label: 2024 },
+                    { value: 2025, label: 2025 },
+                    { value: 2026, label: 2026 },
+                    { value: 2027, label: 2027 },
+                  ]}
+                  searchable
+                  onChange={this.changeClassYear}
+              />
+            </div>
             { preferences }
             {/* { !this.state.isSigningUp ? notifications : null } */}
             { fbUpsell }
@@ -327,6 +384,9 @@ class UserSettingsModal extends React.Component {
               </button>
             </div>
           </div>
+          {transcripts}
+          <br/>
+          {with_map}
         </div>
       </Modal>
     );

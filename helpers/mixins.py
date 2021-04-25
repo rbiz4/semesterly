@@ -115,6 +115,8 @@ class FeatureFlowView(ValidateSubdomainMixin, APIView):
             'featureFlow': dict(feature_flow, name=self.feature_name)
         }
 
+        print(init_data)
+
         return render(request, 'timetable.html', {'init_data': json.dumps(init_data)})
 
 
